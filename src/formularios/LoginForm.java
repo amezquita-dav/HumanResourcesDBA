@@ -9,47 +9,50 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import java.awt.event.MouseEvent;
 
 /**
  *
  * @author angel
  */
+
 public class LoginForm extends javax.swing.JFrame {
-     
 
     /**
      * Creates new form LoginForm
      */
+    
     public LoginForm() {
+        
         initComponents();
         
         // Establecer el título de la ventana
         this.setTitle("Recursos Humanos - Inicio de Sesion");
-        
+
         //Centrar el formulario
         this.setLocationRelativeTo(this);
-        
+
         // Cargar el logo como icono de la ventana desde los recursos del proyecto
         ImageIcon logo = new ImageIcon(getClass().getResource("/imagenes/icono.png"));
         this.setIconImage(logo.getImage());
-        
+
         // Configurar KeyListener para el campo de texto jTextNuevo
         jTextUsuario.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
                 // Convertir el carácter a minúscula si es una letra mayúscula
-        if (Character.isUpperCase(c)) {
-            e.setKeyChar(Character.toLowerCase(c));
-        }
-        // Verificar si el carácter ingresado es una letra sin acento
-        if (!Character.isLetter(c) || !isLatinLetter(c)) {
-            e.consume(); // Si no es válido, lo eliminamos
-        }
-        // Verificar el tamaño máximo de caracteres
-        if (jTextUsuario.getText().length() >= 10) {
-            e.consume(); // Si el tamaño es mayor o igual a 10, no permitir más caracteres
-        }
+                if (Character.isUpperCase(c)) {
+                    e.setKeyChar(Character.toLowerCase(c));
+                }
+                // Verificar si el carácter ingresado es una letra sin acento
+                if (!Character.isLetter(c) || !isLatinLetter(c)) {
+                    e.consume(); // Si no es válido, lo eliminamos
+                }
+                // Verificar el tamaño máximo de caracteres
+                if (jTextUsuario.getText().length() >= 10) {
+                    e.consume(); // Si el tamaño es mayor o igual a 10, no permitir más caracteres
+                }
             }
 
             private boolean isLatinLetter(char c) {
@@ -67,6 +70,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
         
+
     }
 
     /**
@@ -86,25 +90,34 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextClave = new javax.swing.JPasswordField();
         jbtnAceder = new javax.swing.JButton();
-        jbtnRegistrarse = new javax.swing.JButton();
-        jbtnRegistrarse1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLRegistro = new javax.swing.JLabel();
+        jLPwd = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jRegion = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLMessage = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(jLabel1.getFont().deriveFont((float)24));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Iniciar Sesion");
+        jLabel1.setText("HUMAN ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 106, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/userInicio.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 204, 204));
         jLabel3.setText("Usuario:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         jTextUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         jTextUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -114,17 +127,21 @@ public class LoginForm extends javax.swing.JFrame {
                 jTextUsuarioActionPerformed(evt);
             }
         });
+        jPanel1.add(jTextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 200, -1));
 
-        jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 204, 204));
         jLabel4.setText("Clave:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         jTextClave.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         jTextClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextClave.setName("jTextPass"); // NOI18N
+        jPanel1.add(jTextClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 200, -1));
 
-        jbtnAceder.setBackground(new java.awt.Color(204, 255, 255));
-        jbtnAceder.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jbtnAceder.setBackground(new java.awt.Color(0, 204, 204));
+        jbtnAceder.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        jbtnAceder.setForeground(new java.awt.Color(255, 255, 255));
         jbtnAceder.setText("Ingresar");
         jbtnAceder.setToolTipText("");
         jbtnAceder.addActionListener(new java.awt.event.ActionListener() {
@@ -132,149 +149,189 @@ public class LoginForm extends javax.swing.JFrame {
                 jbtnAcederActionPerformed(evt);
             }
         });
+        jPanel1.add(jbtnAceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
 
-        jbtnRegistrarse.setBackground(new java.awt.Color(204, 255, 255));
-        jbtnRegistrarse.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jbtnRegistrarse.setText("Registrarse");
-        jbtnRegistrarse.setToolTipText("");
-        jbtnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnRegistrarseActionPerformed(evt);
+        jLRegistro.setText(" ¿No tienes cuenta? Registrate");
+        jLRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLRegistroMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLRegistroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLRegistroMouseExited(evt);
             }
         });
+        jPanel1.add(jLRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 170, -1));
 
-        jbtnRegistrarse1.setBackground(new java.awt.Color(204, 255, 255));
-        jbtnRegistrarse1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jbtnRegistrarse1.setText("Recuperar");
-        jbtnRegistrarse1.setToolTipText("");
-        jbtnRegistrarse1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnRegistrarse1ActionPerformed(evt);
+        jLPwd.setText(" ¿Olvidaste tu clave?");
+        jLPwd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLPwdMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLPwdMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLPwdMouseExited(evt);
             }
         });
+        jPanel1.add(jLPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 130, -1));
 
-        jLabel5.setText("¿No tienes cuenta?");
+        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setPreferredSize(new java.awt.Dimension(300, 65));
 
-        jLabel6.setText("¿Olvidaste tu clave?");
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("HUMAN");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextUsuario)
-                                            .addComponent(jTextClave)))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(125, 125, 125)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(129, 129, 129)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(100, 100, 100)
-                                .addComponent(jbtnAceder)))
-                        .addGap(0, 74, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jbtnRegistrarse)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbtnRegistrarse1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6)))))
-                .addContainerGap())
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("RESOURCES");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jbtnAceder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addGap(7, 7, 7)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtnRegistrarse)
-                    .addComponent(jbtnRegistrarse1))
-                .addContainerGap(22, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
+
+        jRegion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Globe_32px.png"))); // NOI18N
+        jRegion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jRegionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jRegionMouseExited(evt);
+            }
+        });
+        jPanel1.add(jRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 30, 40));
+
+        jLabel7.setBackground(new java.awt.Color(0, 204, 204));
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel7.setText(" INICIO DE SESION");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+
+        jLMessage.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 10)); // NOI18N
+        jPanel1.add(jLMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 190, 20));
+
+        jPanel4.setBackground(new java.awt.Color(0, 225, 215));
+        jPanel4.setPreferredSize(new java.awt.Dimension(600, 0));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 594, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void jTextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUsuarioActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jTextUsuarioActionPerformed
-
-    private void jbtnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarseActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        registroForm f1=new registroForm();
-        f1.setVisible(true);
-    }//GEN-LAST:event_jbtnRegistrarseActionPerformed
-
-    private void jbtnRegistrarse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarse1ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        RecuperarForm f3=new RecuperarForm();
-        f3.setVisible(true);
-    }//GEN-LAST:event_jbtnRegistrarse1ActionPerformed
 
     private void jbtnAcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAcederActionPerformed
         // TODO add your handling code here:
         String user = jTextUsuario.getText();
         String clave = new String(jTextClave.getPassword());
-    
-    // Verificar que todos los campos estén llenos
-    if (user.isEmpty() || clave.isEmpty()) {
-        // Mostrar mensaje de advertencia si algún campo está vacío
-        JOptionPane.showMessageDialog(null, "Todos los campos deben llenarse");
-        return; // Salir del método sin realizar el registro
-    }else{
-        consultas con=new consultas();
-        con.consultarUsuario(jTextUsuario.getText(), jTextClave.getText());
+
+        // Verificar que todos los campos estén llenos
+        if (user.isEmpty() || clave.isEmpty()) {
+            // Mostrar mensaje de advertencia si algún campo está vacío
+            JOptionPane.showMessageDialog(null, "Todos los campos deben llenarse");
+            return; // Salir del método sin realizar el registro
+        } else {
+            consultas con = new consultas();
+            con.consultarUsuario(jTextUsuario.getText(), jTextClave.getText());
     }//GEN-LAST:event_jbtnAcederActionPerformed
     }
-    /**
+    private void jLPwdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLPwdMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        RecuperarForm f3=new RecuperarForm();
+        f3.setVisible(true);
+    }//GEN-LAST:event_jLPwdMouseClicked
+
+    private void jLPwdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLPwdMouseEntered
+        // TODO add your handling code here:
+        jLPwd.setForeground(new java.awt.Color(0, 204, 204));
+    }//GEN-LAST:event_jLPwdMouseEntered
+
+    private void jLPwdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLPwdMouseExited
+        // TODO add your handling code here:
+        jLPwd.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_jLPwdMouseExited
+
+    private void jLRegistroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLRegistroMouseExited
+        // TODO add your handling code here:
+        jLRegistro.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_jLRegistroMouseExited
+
+    private void jLRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLRegistroMouseEntered
+        // TODO add your handling code here:
+        jLRegistro.setForeground(new java.awt.Color(0, 204, 204));
+    }//GEN-LAST:event_jLRegistroMouseEntered
+
+    private void jLRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLRegistroMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        registroForm f1=new registroForm();
+        f1.setVisible(true);
+    }//GEN-LAST:event_jLRegistroMouseClicked
+
+    private void jRegionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRegionMouseEntered
+        // TODO add your handling code here:
+        jLMessage.setText("Región: Latinoamérica");
+    }//GEN-LAST:event_jRegionMouseEntered
+
+    private void jRegionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRegionMouseExited
+        // TODO add your handling code here:
+        jLMessage.setText("");
+    }//GEN-LAST:event_jRegionMouseExited
+
+    
+        /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -310,17 +367,23 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLMessage;
+    private javax.swing.JLabel jLPwd;
+    private javax.swing.JLabel jLRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jRegion;
     private javax.swing.JPasswordField jTextClave;
     private javax.swing.JTextField jTextUsuario;
     private javax.swing.JButton jbtnAceder;
-    private javax.swing.JButton jbtnRegistrarse;
-    private javax.swing.JButton jbtnRegistrarse1;
     // End of variables declaration//GEN-END:variables
+
 }
