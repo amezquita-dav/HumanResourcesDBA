@@ -24,6 +24,8 @@ public class LoginForm extends javax.swing.JFrame {
     
     public LoginForm() {
         
+        // Eliminar la barra de título
+        setUndecorated(true); 
         initComponents();
         
         // Establecer el título de la ventana
@@ -98,6 +100,11 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLCerrar = new javax.swing.JLabel();
+        jLMinimizar = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,6 +129,7 @@ public class LoginForm extends javax.swing.JFrame {
         jTextUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         jTextUsuario.setForeground(new java.awt.Color(0, 204, 204));
         jTextUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextUsuario.setBorder(null);
         jTextUsuario.setName("jTextUsuario"); // NOI18N
         jTextUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,14 +146,17 @@ public class LoginForm extends javax.swing.JFrame {
         jTextClave.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         jTextClave.setForeground(new java.awt.Color(0, 204, 204));
         jTextClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextClave.setBorder(null);
         jTextClave.setName("jTextPass"); // NOI18N
         jPanel1.add(jTextClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 200, -1));
 
-        jbtnAceder.setBackground(new java.awt.Color(0, 204, 204));
         jbtnAceder.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         jbtnAceder.setForeground(new java.awt.Color(255, 255, 255));
-        jbtnAceder.setText("Ingresar");
+        jbtnAceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image (8).png"))); // NOI18N
         jbtnAceder.setToolTipText("");
+        jbtnAceder.setBorder(null);
+        jbtnAceder.setBorderPainted(false);
+        jbtnAceder.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbtnAceder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jbtnAcederMouseEntered(evt);
@@ -159,7 +170,7 @@ public class LoginForm extends javax.swing.JFrame {
                 jbtnAcederActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnAceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+        jPanel1.add(jbtnAceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
 
         jLRegistro.setText(" ¿No tienes cuenta? Registrate");
         jLRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -221,6 +232,48 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título(1).png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 0, 550, 60));
+
+        jLCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Multiply_32px.png"))); // NOI18N
+        jLCerrar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseMoved(evt);
+            }
+        });
+        jLCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseExited(evt);
+            }
+        });
+        jPanel1.add(jLCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 30, 30));
+
+        jLMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        jLMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLMinimizarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLMinimizarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLMinimizarMouseExited(evt);
+            }
+        });
+        jPanel1.add(jLMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 0, 30, 30));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 204, 204));
+        jSeparator2.setForeground(new java.awt.Color(0, 204, 204));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 200, 10));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 204, 204));
+        jSeparator3.setForeground(new java.awt.Color(0, 204, 204));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 200, 10));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título(2).png"))); // NOI18N
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 600, 500));
@@ -322,6 +375,45 @@ public class LoginForm extends javax.swing.JFrame {
         jbtnAceder.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_jbtnAcederMouseExited
 
+    private void jLMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizarMouseClicked
+        // TODO add your handling code here:
+        this.setState(LoginForm.ICONIFIED);
+    }//GEN-LAST:event_jLMinimizarMouseClicked
+
+    private void jLCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseClicked
+        // TODO add your handling code here:
+         System.exit(0);
+         jLCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLCerrarMouseClicked
+
+    private void jLMinimizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizarMouseEntered
+        // TODO add your handling code here:
+        jLMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLMinimizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+    }//GEN-LAST:event_jLMinimizarMouseEntered
+
+    private void jLMinimizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizarMouseExited
+        // TODO add your handling code here:
+        jLMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLMinimizar.setBorder(null);
+    }//GEN-LAST:event_jLMinimizarMouseExited
+
+    private void jLCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseEntered
+        // TODO add your handling code here:
+        jLCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLCerrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+    }//GEN-LAST:event_jLCerrarMouseEntered
+
+    private void jLCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseExited
+        // TODO add your handling code here:
+        jLCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLCerrar.setBorder(null);
+    }//GEN-LAST:event_jLCerrarMouseExited
+
+    private void jLCerrarMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLCerrarMouseMoved
+
     
         /**
      * @param args the command line arguments
@@ -359,7 +451,9 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLCerrar;
     private javax.swing.JLabel jLMessage;
+    private javax.swing.JLabel jLMinimizar;
     private javax.swing.JLabel jLPwd;
     private javax.swing.JLabel jLRegistro;
     private javax.swing.JLabel jLabel1;
@@ -373,6 +467,9 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jRegion;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPasswordField jTextClave;
     private javax.swing.JTextField jTextUsuario;
     private javax.swing.JButton jbtnAceder;
