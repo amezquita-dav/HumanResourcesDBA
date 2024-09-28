@@ -92,13 +92,13 @@ public class LoginForm extends javax.swing.JFrame {
         jbtnAceder = new javax.swing.JButton();
         jLRegistro = new javax.swing.JLabel();
         jLPwd = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jRegion = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLMessage = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -120,6 +120,7 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         jTextUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jTextUsuario.setForeground(new java.awt.Color(0, 204, 204));
         jTextUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextUsuario.setName("jTextUsuario"); // NOI18N
         jTextUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -135,6 +136,7 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         jTextClave.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jTextClave.setForeground(new java.awt.Color(0, 204, 204));
         jTextClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextClave.setName("jTextPass"); // NOI18N
         jPanel1.add(jTextClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 200, -1));
@@ -144,6 +146,14 @@ public class LoginForm extends javax.swing.JFrame {
         jbtnAceder.setForeground(new java.awt.Color(255, 255, 255));
         jbtnAceder.setText("Ingresar");
         jbtnAceder.setToolTipText("");
+        jbtnAceder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jbtnAcederMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jbtnAcederMouseExited(evt);
+            }
+        });
         jbtnAceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnAcederActionPerformed(evt);
@@ -179,40 +189,6 @@ public class LoginForm extends javax.swing.JFrame {
         });
         jPanel1.add(jLPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 130, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel2.setPreferredSize(new java.awt.Dimension(300, 65));
-
-        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("HUMAN");
-
-        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("RESOURCES");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
-
         jRegion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Globe_32px.png"))); // NOI18N
         jRegion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -233,33 +209,31 @@ public class LoginForm extends javax.swing.JFrame {
         jLMessage.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 10)); // NOI18N
         jPanel1.add(jLMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 190, 20));
 
-        jPanel4.setBackground(new java.awt.Color(0, 225, 215));
-        jPanel4.setPreferredSize(new java.awt.Dimension(600, 0));
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("RESOURCES");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("HUMAN");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título(1).png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 0, 550, 60));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título(2).png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 600, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -284,8 +258,10 @@ public class LoginForm extends javax.swing.JFrame {
         } else {
             consultas con = new consultas();
             con.consultarUsuario(jTextUsuario.getText(), jTextClave.getText());
+            
     }//GEN-LAST:event_jbtnAcederActionPerformed
-    }
+            }
+    
     private void jLPwdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLPwdMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
@@ -296,21 +272,27 @@ public class LoginForm extends javax.swing.JFrame {
     private void jLPwdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLPwdMouseEntered
         // TODO add your handling code here:
         jLPwd.setForeground(new java.awt.Color(0, 204, 204));
+        // Cambiar el cursor a la mano cuando el mouse entra en la etiqueta
+        jLPwd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }//GEN-LAST:event_jLPwdMouseEntered
 
     private void jLPwdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLPwdMouseExited
         // TODO add your handling code here:
         jLPwd.setForeground(new java.awt.Color(0, 0, 0));
+        // Restaurar el cursor predeterminado cuando el mouse sale de la etiqueta
+        jLPwd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_jLPwdMouseExited
 
     private void jLRegistroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLRegistroMouseExited
         // TODO add your handling code here:
         jLRegistro.setForeground(new java.awt.Color(0, 0, 0));
+        jLRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_jLRegistroMouseExited
 
     private void jLRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLRegistroMouseEntered
         // TODO add your handling code here:
         jLRegistro.setForeground(new java.awt.Color(0, 204, 204));
+        jLRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }//GEN-LAST:event_jLRegistroMouseEntered
 
     private void jLRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLRegistroMouseClicked
@@ -329,6 +311,16 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         jLMessage.setText("");
     }//GEN-LAST:event_jRegionMouseExited
+
+    private void jbtnAcederMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnAcederMouseEntered
+        // TODO add your handling code here:
+         jbtnAceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jbtnAcederMouseEntered
+
+    private void jbtnAcederMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnAcederMouseExited
+        // TODO add your handling code here:
+        jbtnAceder.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jbtnAcederMouseExited
 
     
         /**
@@ -371,15 +363,15 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLPwd;
     private javax.swing.JLabel jLRegistro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel jRegion;
     private javax.swing.JPasswordField jTextClave;
     private javax.swing.JTextField jTextUsuario;
