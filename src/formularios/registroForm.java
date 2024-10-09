@@ -19,6 +19,9 @@ public class registroForm extends javax.swing.JFrame {
      * Creates new form registroForm
      */
     public registroForm() {
+        
+        // Eliminar la barra de título
+        setUndecorated(true); 
         initComponents();
         // Establecer el título de la ventana
         this.setTitle("Recursos Humanos - Registro");
@@ -31,7 +34,7 @@ public class registroForm extends javax.swing.JFrame {
         this.setIconImage(logo.getImage());
         
      // Configurar KeyListener para el campo de texto jTextNuevo
-        jTextNuevo.addKeyListener(new KeyAdapter() {
+        jTextClave.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
@@ -45,7 +48,7 @@ public class registroForm extends javax.swing.JFrame {
                 
                 }
                 // Verificar el tamaño máximo de caracteres
-                if (jTextNuevo.getText().length() >= 10) {
+                if (jTextClave.getText().length() >= 10) {
                     e.consume(); // Si el tamaño es mayor o igual a 10, no permitir más caracteres
                 }
             }
@@ -84,22 +87,19 @@ public class registroForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLMinimizar1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextNuevo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextClave = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jTextPass2 = new javax.swing.JPasswordField();
         jbtnvolver = new javax.swing.JButton();
         jbtnregistrar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextNuevo1 = new javax.swing.JTextField();
-        jTextNuevo2 = new javax.swing.JTextField();
         jTextNuevo3 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextNuevo4 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -111,6 +111,33 @@ public class registroForm extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
+        jTextNuevo5 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextNuevo6 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLCerrar = new javax.swing.JLabel();
+        jLMinimizar2 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLMinimizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        jLMinimizar1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLMinimizar1MouseMoved(evt);
+            }
+        });
+        jLMinimizar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLMinimizar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLMinimizar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLMinimizar1MouseExited(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -123,42 +150,29 @@ public class registroForm extends javax.swing.JFrame {
         jLabel3.setText("Nombre:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 150, 60, -1));
 
-        jTextNuevo.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-        jTextNuevo.setForeground(new java.awt.Color(0, 204, 204));
-        jTextNuevo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextNuevo.setBorder(null);
-        jTextNuevo.setName("jTextUsuario"); // NOI18N
-        jTextNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNuevoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 240, -1));
-
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 204, 204));
         jLabel4.setText(" Clave:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
 
-        jTextClave.setBackground(new java.awt.Color(255, 255, 255));
         jTextClave.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jTextClave.setForeground(new java.awt.Color(0, 204, 204));
         jTextClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextClave.setBorder(null);
         jTextClave.setName("jTextPass"); // NOI18N
-        jPanel1.add(jTextClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 240, -1));
+        jPanel1.add(jTextClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 240, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 204, 204));
         jLabel5.setText(" Confirmar:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, -1));
 
         jTextPass2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jTextPass2.setForeground(new java.awt.Color(0, 204, 204));
         jTextPass2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextPass2.setBorder(null);
         jTextPass2.setName("jTextPass"); // NOI18N
-        jPanel1.add(jTextPass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 240, -1));
+        jPanel1.add(jTextPass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 240, -1));
 
         jbtnvolver.setBackground(new java.awt.Color(0, 204, 204));
         jbtnvolver.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
@@ -166,6 +180,14 @@ public class registroForm extends javax.swing.JFrame {
         jbtnvolver.setBorder(null);
         jbtnvolver.setContentAreaFilled(false);
         jbtnvolver.setDefaultCapable(false);
+        jbtnvolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jbtnvolverMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jbtnvolverMouseExited(evt);
+            }
+        });
         jbtnvolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnvolverActionPerformed(evt);
@@ -179,15 +201,20 @@ public class registroForm extends javax.swing.JFrame {
         jbtnregistrar.setBorder(null);
         jbtnregistrar.setBorderPainted(false);
         jbtnregistrar.setContentAreaFilled(false);
+        jbtnregistrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jbtnregistrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jbtnregistrarMouseExited(evt);
+            }
+        });
         jbtnregistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnregistrarActionPerformed(evt);
             }
         });
         jPanel1.add(jbtnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo9x5.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 60));
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 204, 204));
@@ -206,18 +233,6 @@ public class registroForm extends javax.swing.JFrame {
         });
         jPanel1.add(jTextNuevo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 240, -1));
 
-        jTextNuevo2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-        jTextNuevo2.setForeground(new java.awt.Color(102, 102, 102));
-        jTextNuevo2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextNuevo2.setBorder(null);
-        jTextNuevo2.setName("jTextUsuario"); // NOI18N
-        jTextNuevo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNuevo2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextNuevo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 240, -1));
-
         jTextNuevo3.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         jTextNuevo3.setForeground(new java.awt.Color(0, 153, 153));
         jTextNuevo3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -228,21 +243,16 @@ public class registroForm extends javax.swing.JFrame {
                 jTextNuevo3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextNuevo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 240, -1));
+        jPanel1.add(jTextNuevo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 240, -1));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 204));
         jLabel6.setText("Apellido:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 220, 60, -1));
 
-        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 204, 204));
-        jLabel7.setText("Telefono:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 60, -1));
-
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 204, 204));
-        jLabel8.setText("Usuario:");
+        jLabel8.setText("Puesto:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, -1, -1));
 
         jTextNuevo4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
@@ -286,6 +296,92 @@ public class registroForm extends javax.swing.JFrame {
         jSeparator8.setForeground(new java.awt.Color(0, 204, 204));
         jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 240, 20));
 
+        jTextNuevo5.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jTextNuevo5.setForeground(new java.awt.Color(102, 102, 102));
+        jTextNuevo5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextNuevo5.setBorder(null);
+        jTextNuevo5.setName("jTextUsuario"); // NOI18N
+        jTextNuevo5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNuevo5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextNuevo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 240, -1));
+
+        jLabel11.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel11.setText("Telefono:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 60, -1));
+
+        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel12.setText("Usuario:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, -1, -1));
+
+        jTextNuevo6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jTextNuevo6.setForeground(new java.awt.Color(0, 204, 204));
+        jTextNuevo6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextNuevo6.setBorder(null);
+        jTextNuevo6.setName("jTextUsuario"); // NOI18N
+        jTextNuevo6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNuevo6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextNuevo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 240, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 240, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondoblanco.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, 520));
+
+        jLCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Multiply_32px.png"))); // NOI18N
+        jLCerrar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseMoved(evt);
+            }
+        });
+        jLCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLCerrarMouseExited(evt);
+            }
+        });
+        jPanel1.add(jLCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 30, 30));
+
+        jLMinimizar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        jLMinimizar2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLMinimizar2MouseMoved(evt);
+            }
+        });
+        jLMinimizar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLMinimizar2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLMinimizar2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLMinimizar2MouseExited(evt);
+            }
+        });
+        jPanel1.add(jLMinimizar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 0, 30, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo9x5.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -304,11 +400,6 @@ public class registroForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNuevoActionPerformed
-        // TODO add your handling code here:
-        // Agregar un KeyListener para validar el texto ingresado
-    }//GEN-LAST:event_jTextNuevoActionPerformed
-
     private void jbtnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnvolverActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
@@ -318,7 +409,7 @@ public class registroForm extends javax.swing.JFrame {
 
     private void jbtnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnregistrarActionPerformed
         // Obtener el texto de los campos
-    String user = jTextNuevo.getText();
+    String user = jTextClave.getText();
     String clave = new String(jTextClave.getPassword());
     String pass = new String(jTextPass2.getPassword());
     
@@ -344,7 +435,7 @@ public class registroForm extends javax.swing.JFrame {
         con.guardarUsuario(user, clave);
         
         // Limpiar los campos después del registro
-        jTextNuevo.setText("");
+        jTextClave.setText("");
         jTextClave.setText("");
         jTextPass2.setText("");
         
@@ -359,10 +450,6 @@ public class registroForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextNuevo1ActionPerformed
 
-    private void jTextNuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNuevo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNuevo2ActionPerformed
-
     private void jTextNuevo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNuevo3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextNuevo3ActionPerformed
@@ -370,6 +457,102 @@ public class registroForm extends javax.swing.JFrame {
     private void jTextNuevo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNuevo4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextNuevo4ActionPerformed
+
+    private void jTextNuevo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNuevo5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNuevo5ActionPerformed
+
+    private void jTextNuevo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNuevo6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNuevo6ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jLCerrarMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLCerrarMouseMoved
+
+    private void jLCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+        jLCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLCerrarMouseClicked
+
+    private void jLCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseEntered
+        // TODO add your handling code here:
+        jLCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLCerrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+    }//GEN-LAST:event_jLCerrarMouseEntered
+
+    private void jLCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCerrarMouseExited
+        // TODO add your handling code here:
+        jLCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLCerrar.setBorder(null);
+    }//GEN-LAST:event_jLCerrarMouseExited
+
+    private void jLMinimizar1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLMinimizar1MouseMoved
+
+    private void jLMinimizar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar1MouseClicked
+        // TODO add your handling code here:
+        this.setState(LoginForm.ICONIFIED);
+    }//GEN-LAST:event_jLMinimizar1MouseClicked
+
+    private void jLMinimizar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar1MouseEntered
+        // TODO add your handling code here:
+        jLMinimizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLMinimizar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+    }//GEN-LAST:event_jLMinimizar1MouseEntered
+
+    private void jLMinimizar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar1MouseExited
+        // TODO add your handling code here:
+        jLMinimizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLMinimizar1.setBorder(null);
+    }//GEN-LAST:event_jLMinimizar1MouseExited
+
+    private void jLMinimizar2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar2MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLMinimizar2MouseMoved
+
+    private void jLMinimizar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar2MouseClicked
+        // TODO add your handling code here:
+        this.setState(LoginForm.ICONIFIED);
+    }//GEN-LAST:event_jLMinimizar2MouseClicked
+
+    private void jLMinimizar2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar2MouseEntered
+        // TODO add your handling code here:
+        jLMinimizar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLMinimizar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+    }//GEN-LAST:event_jLMinimizar2MouseEntered
+
+    private void jLMinimizar2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMinimizar2MouseExited
+        // TODO add your handling code here:
+        jLMinimizar2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLMinimizar2.setBorder(null);
+    }//GEN-LAST:event_jLMinimizar2MouseExited
+
+    private void jbtnvolverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnvolverMouseEntered
+        // TODO add your handling code here:
+            jbtnvolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jbtnvolverMouseEntered
+
+    private void jbtnvolverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnvolverMouseExited
+        // TODO add your handling code here:
+        jbtnvolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jbtnvolverMouseExited
+
+    private void jbtnregistrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnregistrarMouseExited
+        // TODO add your handling code here:
+        jbtnregistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jbtnregistrarMouseExited
+
+    private void jbtnregistrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnregistrarMouseEntered
+        // TODO add your handling code here:
+         jbtnregistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jbtnregistrarMouseEntered
 
     /**
      * @param args the command line arguments
@@ -407,13 +590,19 @@ public class registroForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLCerrar;
+    private javax.swing.JLabel jLMinimizar1;
+    private javax.swing.JLabel jLMinimizar2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -426,11 +615,11 @@ public class registroForm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JPasswordField jTextClave;
-    private javax.swing.JTextField jTextNuevo;
     private javax.swing.JTextField jTextNuevo1;
-    private javax.swing.JTextField jTextNuevo2;
     private javax.swing.JTextField jTextNuevo3;
     private javax.swing.JTextField jTextNuevo4;
+    private javax.swing.JTextField jTextNuevo5;
+    private javax.swing.JTextField jTextNuevo6;
     private javax.swing.JPasswordField jTextPass2;
     private javax.swing.JButton jbtnregistrar;
     private javax.swing.JButton jbtnvolver;
