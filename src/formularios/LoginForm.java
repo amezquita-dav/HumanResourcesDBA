@@ -17,10 +17,11 @@ import java.awt.event.MouseEvent;
  */
 
 public class LoginForm extends javax.swing.JFrame {
-
+     private String currentuser;
     /**
      * Creates new form LoginForm
      */
+    
     
     public LoginForm() {
         
@@ -105,6 +106,10 @@ public class LoginForm extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -119,7 +124,7 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 106, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 204, 204));
@@ -215,7 +220,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 204, 204));
         jLabel7.setText(" INICIO DE SESION");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
         jLMessage.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 10)); // NOI18N
         jPanel1.add(jLMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 190, 20));
@@ -223,15 +228,15 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("RESOURCES");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("HUMAN");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título(1).png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 0, 550, 60));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 0, 590, 60));
 
         jLCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Multiply_32px.png"))); // NOI18N
         jLCerrar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -275,8 +280,24 @@ public class LoginForm extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(0, 204, 204));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 200, 10));
 
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("HResources");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("GESTIONA EL FUTURO DE TU EQUIPO, HOY");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CARRUCELIZQUIERDA.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 50, 40));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CARRUCELDERECHA.png"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 50, 40));
+
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título(2).png"))); // NOI18N
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 600, 500));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 560, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,16 +323,23 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         String user = jTextUsuario.getText();
         String clave = new String(jTextClave.getPassword());
+        String username = jTextUsuario.getText(); 
 
         // Verificar que todos los campos estén llenos
         if (user.isEmpty() || clave.isEmpty()) {
             // Mostrar mensaje de advertencia si algún campo está vacío
             JOptionPane.showMessageDialog(null, "Todos los campos deben llenarse");
             return; // Salir del método sin realizar el registro
+            
         } else {
             consultas con = new consultas();
             con.consultarUsuario(jTextUsuario.getText(), jTextClave.getText());
+            this.setVisible(false);
             
+            // Abre el formulario JobsForm y le pasa el usuario actual
+            JobsForm jobsForm = new JobsForm(currentuser);
+            jobsForm.setVisible(true);
+            this.dispose(); // Cierra el formulario de login
     }//GEN-LAST:event_jbtnAcederActionPerformed
             }
     
@@ -457,11 +485,15 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLPwd;
     private javax.swing.JLabel jLRegistro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
